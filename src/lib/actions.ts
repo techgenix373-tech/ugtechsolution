@@ -1,7 +1,7 @@
 'use server';
 
 import { z } from 'zod';
-import { generateBlogContentIdeas, GenerateBlogContentIdeasInput } from '@/ai/flows/generate-blog-content-ideas';
+import { generateBlogContentIdeas, GenerateBlogContentIdeasInput, GenerateBlogContentIdeasOutput } from '@/ai/flows/generate-blog-content-ideas';
 
 const FormSchema = z.object({
   targetAudience: z.enum(['SME', 'startup']),
@@ -10,7 +10,7 @@ const FormSchema = z.object({
 
 export type FormState = {
   message: 'success' | 'error' | 'idle';
-  ideas?: string[];
+  ideas?: GenerateBlogContentIdeasOutput['blogContentIdeas'];
   error?: string;
 };
 

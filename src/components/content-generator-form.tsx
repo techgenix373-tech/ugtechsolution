@@ -11,7 +11,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Loader2, Lightbulb, AlertCircle } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Loader2, Lightbulb, AlertCircle, CheckCircle } from 'lucide-react';
 
 const initialState: FormState = {
   message: 'idle',
@@ -47,7 +48,7 @@ export function ContentGeneratorForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Generate Blog Ideas</CardTitle>
+        <CardTitle>Generate Blog Ideas & Outlines</CardTitle>
         <CardDescription>
           Select your target audience and provide optional keywords to get started.
         </CardDescription>
@@ -90,15 +91,29 @@ export function ContentGeneratorForm() {
 
           {state.message === 'success' && state.ideas && (
             <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Generated Ideas:</h3>
-                <ul className="space-y-3">
-                    {state.ideas.map((idea, index) => (
-                        <li key={index} className="flex items-start p-3 rounded-md border bg-muted/50">
-                            <Lightbulb className="h-5 w-5 mr-3 mt-1 text-primary flex-shrink-0" />
-                            <span>{idea}</span>
-                        </li>
-                    ))}
-                </ul>
+              <h3 className="text-lg font-semibold flex items-center">
+                <Lightbulb className="h-5 w-5 mr-2 text-primary" />
+                Generated Ideas
+              </h3>
+              <Accordion type="single" collapsible className="w-full">
+                {state.ideas.map((idea, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="text-left font-medium hover:no-underline">
+                      {idea.title}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="space-y-3 pl-4 pt-2">
+                        {idea.outline.map((point, pointIndex) => (
+                          <li key={pointIndex} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 mr-3 mt-1 text-green-500 flex-shrink-0" />
+                            <span className="text-muted-foreground">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           )}
         </div>

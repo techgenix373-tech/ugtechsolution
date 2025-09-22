@@ -28,10 +28,13 @@ export type GenerateBlogContentIdeasInput = z.infer<
   typeof GenerateBlogContentIdeasInputSchema
 >;
 
+const IdeaWithOutlineSchema = z.object({
+  title: z.string().describe('The title of the blog post idea.'),
+  outline: z.array(z.string()).describe('A list of sections or key points for the blog post outline.'),
+});
+
 const GenerateBlogContentIdeasOutputSchema = z.object({
-  blogContentIdeas: z
-    .array(z.string())
-    .describe('A list of blog content ideas.'),
+  blogContentIdeas: z.array(IdeaWithOutlineSchema).describe('A list of blog content ideas, each with a title and an outline.'),
 });
 export type GenerateBlogContentIdeasOutput = z.infer<
   typeof GenerateBlogContentIdeasOutputSchema
@@ -49,15 +52,29 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   output: {schema: GenerateBlogContentIdeasOutputSchema},
   prompt: `You are a marketing expert specializing in content creation for {{targetAudience}}s.
 
-  Generate a list of blog content ideas based on current trends and SEO best practices.
+  Generate a list of blog content ideas based on current trends and SEO best practices. For each idea, provide a catchy title and a brief outline with 3-5 key sections or talking points.
 
   The ideas should be engaging and relevant to the target audience.
   Here are some keywords to guide your idea generation, if provided: {{{keywords}}}
 
   Here are some example ideas, depending on the target audience:
 
-  SME: "How to Get Your Shop Online in Uganda", "Leveraging Mobile Money for E-commerce in East Africa"
-  Startup: "5 Common Technical SEO Mistakes", "Building a Scalable Tech Infrastructure"
+  SME:
+  Title: "How to Get Your Shop Online in Uganda"
+  Outline:
+  - Choosing the right e-commerce platform
+  - Integrating Mobile Money for local payments
+  - Simple marketing strategies for your new online store
+  - Navigating logistics and delivery in Uganda
+
+  Startup:
+  Title: "5 Common Technical SEO Mistakes to Avoid"
+  Outline:
+  - Ignoring mobile-first indexing
+  - Poor site structure and internal linking
+  - Not optimizing for Core Web Vitals
+  - Missing or unoptimized structured data (Schema)
+  - Forgetting about international SEO for scaling
   `,
 });
 
