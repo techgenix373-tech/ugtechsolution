@@ -1,3 +1,174 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { ArrowRight, BarChart, Briefcase, Code, Lightbulb, PenTool } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+const smeCaseStudyImage = PlaceHolderImages.find(img => img.id === 'case-study-sme');
+const startupCaseStudyImage = PlaceHolderImages.find(img => img.id === 'case-study-startup');
+const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="animate-fade-in">
+      {/* Hero Section */}
+      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-gray-800">
+        {heroImage && (
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-cover opacity-30"
+            priority
+            data-ai-hint={heroImage.imageHint}
+          />
+        )}
+        <div className="relative z-10 p-4">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
+            Digital Solutions for East Africa's Future
+          </h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 drop-shadow">
+            We build powerful e-commerce platforms for local businesses and provide expert SEO services for startups.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/solutions/sme">Solutions for Local Businesses</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/services/startups">Services for Startups</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">What We Do</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              From local shops to high-growth startups, we provide the technology and expertise to help you succeed online.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center">
+              <CardHeader>
+                <div className="mx-auto bg-primary/20 text-primary rounded-full p-3 w-fit">
+                  <Briefcase className="w-8 h-8" />
+                </div>
+                <CardTitle className="font-headline pt-4">E-commerce for SMEs</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Custom online stores integrated with local payment methods like Mobile Money to get your business selling online, fast.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardHeader>
+                <div className="mx-auto bg-primary/20 text-primary rounded-full p-3 w-fit">
+                  <BarChart className="w-8 h-8" />
+                </div>
+                <CardTitle className="font-headline pt-4">SEO for Startups</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Technical SEO audits and on-page optimization to boost your organic traffic and dominate search rankings.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardHeader>
+                <div className="mx-auto bg-primary/20 text-primary rounded-full p-3 w-fit">
+                  <Lightbulb className="w-8 h-8" />
+                </div>
+                <CardTitle className="font-headline pt-4">Content Strategy</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Leverage our AI-powered tool to generate compelling blog ideas and content that attracts and converts your target audience.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Teaser */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Proven Results</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              We deliver measurable impact. See how we've helped businesses like yours grow.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {smeCaseStudyImage && (
+               <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2">
+                  <div className="relative h-64 md:h-auto">
+                    <Image src={smeCaseStudyImage.imageUrl} alt={smeCaseStudyImage.description} fill className="object-cover" data-ai-hint={smeCaseStudyImage.imageHint}/>
+                  </div>
+                  <div className="p-6 flex flex-col justify-center">
+                    <CardDescription>SME E-commerce</CardDescription>
+                    <CardTitle className="font-headline mt-1">Jumia Local Competitor</CardTitle>
+                    <p className="text-muted-foreground mt-2 mb-4">Enabled a Kampala-based retailer to launch online, resulting in a 300% increase in sales within 6 months.</p>
+                    <Button asChild variant="link" className="p-0 justify-start h-auto">
+                      <Link href="/case-studies">Read Case Study <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            )}
+            {startupCaseStudyImage && (
+              <Card className="overflow-hidden">
+                <div className="grid md:grid-cols-2">
+                   <div className="relative h-64 md:h-auto">
+                    <Image src={startupCaseStudyImage.imageUrl} alt={startupCaseStudyImage.description} fill className="object-cover" data-ai-hint={startupCaseStudyImage.imageHint} />
+                  </div>
+                  <div className="p-6 flex flex-col justify-center">
+                    <CardDescription>Startup SEO</CardDescription>
+                    <CardTitle className="font-headline mt-1">Fintech App</CardTitle>
+                    <p className="text-muted-foreground mt-2 mb-4">Improved organic search traffic by 150% and achieved first-page rankings for 10+ target keywords.</p>
+                    <Button asChild variant="link" className="p-0 justify-start h-auto">
+                      <Link href="/case-studies">Read Case Study <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            )}
+          </div>
+           <div className="text-center mt-12">
+            <Button asChild size="lg">
+              <Link href="/case-studies">Explore All Case Studies</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Teaser */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">Meet the Experts</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              We are a passionate team of developers, designers, and strategists dedicated to helping your business thrive in the digital age.
+            </p>
+            <div className="flex justify-center mt-8">
+              <div className="flex -space-x-4">
+                {PlaceHolderImages.filter(i => i.id.startsWith('team-member-')).slice(0, 4).map(member => (
+                  <Image key={member.id} src={member.imageUrl} alt={member.description} width={64} height={64} className="rounded-full border-4 border-background" data-ai-hint={member.imageHint} />
+                ))}
+              </div>
+            </div>
+            <Button asChild size="lg" className="mt-8">
+              <Link href="/about">Learn More About Our Team</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
