@@ -16,7 +16,7 @@ const testimonials = [
     avatar: PlaceHolderImages.find(img => img.id === 'testimonial-1'),
   },
   {
-    name: 'Johnathan Doe',
+    name: 'Johnathan Kasibante',
     company: 'CEO, TechNova Startups',
     text: 'The technical SEO audit was incredibly detailed. We saw a 40% increase in organic traffic within three months. Highly recommended for any startup.',
     rating: 5,
