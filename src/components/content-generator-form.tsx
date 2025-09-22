@@ -93,9 +93,9 @@ export function ContentGeneratorForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Generate Blog Ideas & Outlines</CardTitle>
+        <CardTitle>Generate Content Ideas</CardTitle>
         <CardDescription>
-          Select your target audience and provide optional keywords to get started.
+          Select your target audience and refine your content needs to get started.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -172,6 +172,10 @@ export function ContentGeneratorForm() {
                   <SelectItem value="review">Review</SelectItem>
                   <SelectItem value="faq">FAQ Article</SelectItem>
                   <SelectItem value="press-release">Press Release</SelectItem>
+                  <SelectItem value="promotional-email">Promotional Email</SelectItem>
+                  <SelectItem value="transactional-email">Transactional Email</SelectItem>
+                  <SelectItem value="welcome-email">Welcome Email</SelectItem>
+                  <SelectItem value="newsletter">Newsletter</SelectItem>
                 </SelectContent>
               </Select>
             </div>

@@ -26,19 +26,19 @@ const GenerateBlogContentIdeasInputSchema = z.object({
   contentLength: z.enum(['short', 'standard', 'long']).describe('The desired length of the content.'),
   toneOfVoice: z.enum(['professional', 'casual', 'technical', 'inspirational']).describe('The desired tone of voice for the content.'),
   numberOfSuggestions: z.coerce.number().min(1).max(10).describe('The number of blog content ideas to generate.'),
-  contentFormat: z.enum(['blog', 'listicle', 'how-to', 'comparison', 'case-study', 'review', 'faq', 'press-release']).describe('The desired format of the content.'),
+  contentFormat: z.enum(['blog', 'listicle', 'how-to', 'comparison', 'case-study', 'review', 'faq', 'press-release', 'promotional-email', 'transactional-email', 'welcome-email', 'newsletter']).describe('The desired format of the content.'),
 });
 export type GenerateBlogContentIdeasInput = z.infer<
   typeof GenerateBlogContentIdeasInputSchema
 >;
 
 const IdeaWithOutlineSchema = z.object({
-  title: z.string().describe('The title of the blog post idea.'),
-  outline: z.array(z.string()).describe('A list of sections or key points for the blog post outline.'),
+  title: z.string().describe('The title of the blog post idea, or the subject line if it is an email.'),
+  outline: z.array(z.string()).describe('A list of sections or key points for the content outline, or the body of the email.'),
 });
 
 const GenerateBlogContentIdeasOutputSchema = z.object({
-  blogContentIdeas: z.array(IdeaWithOutlineSchema).describe('A list of blog content ideas, each with a title and an outline.'),
+  blogContentIdeas: z.array(IdeaWithOutlineSchema).describe('A list of content ideas, each with a title/subject and an outline/body.'),
 });
 export type GenerateBlogContentIdeasOutput = z.infer<
   typeof GenerateBlogContentIdeasOutputSchema
@@ -57,14 +57,12 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   prompt: `You are a marketing expert specializing in content creation for {{targetAudience}}s.
 
   Generate a list of {{numberOfSuggestions}} content ideas based on current trends and SEO best practices. For each idea, provide a catchy title and a brief outline appropriate for the selected format.
-
-  The ideas should be engaging and relevant to the target audience.
   
   The tone of the content should be: {{toneOfVoice}}.
   The desired content length is: {{contentLength}}.
-  - short: 300-500 words, with a 2-3 point outline.
-  - standard: 800-1200 words, with a 3-5 point outline.
-  - long: 1500+ words, with a 5-7 point detailed outline.
+  - short: 300-500 words for articles, or a brief email.
+  - standard: 800-1200 words for articles, or a standard length email.
+  - long: 1500+ words for articles, or a more detailed email.
   
   The desired content format is: {{contentFormat}}.
   - blog: A standard article format.
@@ -75,6 +73,12 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   - review: An outline for a product or service review including "Key Features," "Pros & Cons," and a "Final Verdict."
   - faq: Generate a list of relevant questions on the topic and structure them as a Q&A.
   - press-release: A standard press release format including headline, dateline, introduction, body, and boilerplate.
+  - promotional-email: Generate an email with a catchy Subject Line (as the title) and Body (as the outline) for a sale, new product, or special offer.
+  - transactional-email: Generate a clear and concise email for order confirmation, shipping notification, or password reset. Subject line as title, body as outline.
+  - welcome-email: Generate a friendly and engaging email to onboard a new customer or subscriber. Subject line as title, body as outline.
+  - newsletter: Generate ideas and short snippets for a company newsletter. Title should be a potential newsletter headline, and the outline should be a list of content snippets.
+
+  For emails, the 'title' should be the email subject line, and the 'outline' should be the email body.
 
   Here are some keywords to guide your idea generation, if provided: {{{keywords}}}
 
@@ -96,6 +100,15 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   - Not optimizing for Core Web Vitals
   - Missing or unoptimized structured data (Schema)
   - Forgetting about international SEO for scaling
+
+  Promotional Email Example:
+  Title: "Flash Sale! 20% Off All E-commerce Setups"
+  Outline:
+  - "Hi [Name],"
+  - "Ready to take your business online? For the next 48 hours, get 20% off our Starter Shop package."
+  - "Click here to claim your offer: [Link]"
+  - "Best,"
+  - "The UGTech Team"
   `,
 });
 
@@ -110,4 +123,3 @@ const generateBlogContentIdeasFlow = ai.defineFlow(
     return output!;
   }
 );
-
