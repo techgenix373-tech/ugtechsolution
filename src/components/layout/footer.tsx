@@ -1,5 +1,6 @@
-import { Twitter, Linkedin, Github, Dot } from 'lucide-react';
+import { Twitter, Linkedin, Github } from 'lucide-react';
 import Link from 'next/link';
+import { Logo } from '@/components/logo';
 
 export function Footer() {
   return (
@@ -8,8 +9,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Dot className="h-8 w-8 text-primary" strokeWidth={10} />
-              <span className="font-bold text-lg font-headline">UGTech Solutions</span>
+              <Logo className="h-8 w-8 text-primary" />
+              <span className="font-bold text-lg font-headline">UG Tech Solution</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Digital Solutions for East Africa's Future.
@@ -41,7 +42,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-                &copy; {new Date().getFullYear()} UGTech Solutions. All rights reserved.
+                &copy; {new Date().getFullYear()} UG Tech Solution. All rights reserved.
             </p>
             <div className="flex items-center space-x-4">
                 <Link href="#" aria-label="Twitter">

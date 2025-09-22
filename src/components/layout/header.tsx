@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Dot } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -27,8 +28,8 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Dot className="h-8 w-8 text-primary" strokeWidth={10}/>
-            <span className="font-bold font-headline">UGTech Solutions</span>
+            <Logo className="h-8 w-8 text-primary" />
+            <span className="font-bold font-headline">UG Tech Solution</span>
           </Link>
         </div>
         <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
@@ -63,8 +64,8 @@ export function Header() {
                   className="mr-6 flex items-center space-x-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Dot className="h-8 w-8 text-primary" strokeWidth={10}/>
-                  <span className="font-bold">UGTech Solutions</span>
+                  <Logo className="h-8 w-8 text-primary" />
+                  <span className="font-bold">UG Tech Solution</span>
                 </Link>
                 <div className="flex flex-col space-y-3">
                   {navLinks.map((link) => (
