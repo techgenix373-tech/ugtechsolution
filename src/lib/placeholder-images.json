@@ -31,6 +31,30 @@
       "imageHint": "person glasses"
     },
     {
+      "id": "testimonial-1",
+      "description": "Headshot of a satisfied client",
+      "imageUrl": "https://picsum.photos/seed/401/100/100",
+      "imageHint": "business person"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Headshot of a satisfied client",
+      "imageUrl": "https://picsum.photos/seed/402/100/100",
+      "imageHint": "smiling woman"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Headshot of a satisfied client",
+      "imageUrl": "https://picsum.photos/seed/403/100/100",
+      "imageHint": "man wearing suit"
+    },
+    {
+      "id": "testimonial-4",
+      "description": "Headshot of a satisfied client",
+      "imageUrl": "https://picsum.photos/seed/404/100/100",
+      "imageHint": "woman smiling"
+    },
+    {
       "id": "sme-solution-bg",
       "description": "A person using a smartphone to make a mobile payment",
       "imageUrl": "https://picsum.photos/seed/301/1200/400",

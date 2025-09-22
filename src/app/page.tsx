@@ -2,10 +2,42 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, BarChart, Briefcase, Code, Lightbulb, PenTool } from 'lucide-react';
+import { ArrowRight, BarChart, Briefcase, Code, Lightbulb, PenTool, Star } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
+
+const testimonials = [
+  {
+    name: 'Sarah Nakyanzi',
+    company: 'Director, Kampala Artisans',
+    text: 'UGTech Solutions revolutionized our online presence. Their e-commerce platform with mobile money integration was a game-changer for our sales.',
+    rating: 5,
+    avatar: PlaceHolderImages.find(img => img.id === 'testimonial-1'),
+  },
+  {
+    name: 'Johnathan Doe',
+    company: 'CEO, TechNova Startups',
+    text: 'The technical SEO audit was incredibly detailed. We saw a 40% increase in organic traffic within three months. Highly recommended for any startup.',
+    rating: 5,
+    avatar: PlaceHolderImages.find(img => img.id === 'testimonial-2'),
+  },
+  {
+    name: 'Fatima Ibrahim',
+    company: 'Founder, AfroChic Boutique',
+    text: "I'm not tech-savvy, but their team made the process of getting my shop online so easy. The dashboard is simple and powerful.",
+    rating: 4,
+    avatar: PlaceHolderImages.find(img => img.id === 'testimonial-3'),
+  },
+  {
+    name: 'Mark Ochieng',
+    company: 'Marketing Head, InnovateKE',
+    text: 'The AI content tool has saved us countless hours. We now have a steady stream of relevant blog ideas that our audience loves.',
+    rating: 5,
+    avatar: PlaceHolderImages.find(img => img.id === 'testimonial-4'),
+  },
+];
+
 
 export default function Home() {
   return (
@@ -89,6 +121,51 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">What Our Clients Say</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Real stories from businesses we've helped empower.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {testimonials.map((testimonial) => (
+              <Card key={testimonial.name} className="flex flex-col">
+                <CardContent className="pt-6 flex-grow">
+                  <div className="flex mb-2">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                </CardContent>
+                <CardHeader className="flex-row items-center gap-4 pt-4">
+                  {testimonial.avatar && (
+                    <Image
+                      src={testimonial.avatar.imageUrl}
+                      alt={testimonial.avatar.description}
+                      width={48}
+                      height={48}
+                      className="rounded-full"
+                      data-ai-hint={testimonial.avatar.imageHint}
+                    />
+                  )}
+                  <div>
+                    <CardTitle className="text-base font-semibold">{testimonial.name}</CardTitle>
+                    <CardDescription>{testimonial.company}</CardDescription>
+                  </div>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
