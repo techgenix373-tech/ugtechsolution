@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/logo";
 
@@ -29,7 +29,7 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-8 w-8 text-primary" />
-            <span className="font-bold font-headline">UG Tech Solution</span>
+            <span className="font-bold font-headline">UGTech Solutions</span>
           </Link>
         </div>
         <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
@@ -55,8 +55,8 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <SheetHeader>
-                <SheetTitle className="sr-only">Main Menu</SheetTitle>
+              <SheetHeader className="sr-only">
+                <SheetTitle>Main Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col space-y-4">
                 <Link
@@ -65,7 +65,7 @@ export function Header() {
                   onClick={() => setIsOpen(false)}
                 >
                   <Logo className="h-8 w-8 text-primary" />
-                  <span className="font-bold">UG Tech Solution</span>
+                  <span className="font-bold">UGTech Solutions</span>
                 </Link>
                 <div className="flex flex-col space-y-3">
                   {navLinks.map((link) => (
