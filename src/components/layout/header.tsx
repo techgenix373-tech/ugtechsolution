@@ -29,7 +29,7 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-8 w-8" />
-            <span className="font-bold font-headline">Nexus Solutions</span>
+            <span className="font-bold font-headline">UG Tech Solution</span>
           </Link>
         </div>
         <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
@@ -56,7 +56,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>
-                <SheetTitle>Main Menu</SheetTitle>
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col space-y-4">
                 <Link
@@ -65,7 +65,7 @@ export function Header() {
                   onClick={() => setIsOpen(false)}
                 >
                   <Logo className="h-8 w-8" />
-                  <span className="font-bold">Nexus Solutions</span>
+                  <span className="font-bold">UG Tech Solution</span>
                 </Link>
                 <div className="flex flex-col space-y-3">
                   {navLinks.map((link) => (
