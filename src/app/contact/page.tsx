@@ -39,8 +39,8 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-muted-foreground mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold">Email Us</h3>
-                      <a href="mailto:hello@ugtech.solutions" className="text-primary hover:underline break-all">
-                        hello@ugtech.solutions
+                      <a href="mailto:techgenix373@gmail.com" className="text-primary hover:underline break-all">
+                        techgenix373@gmail.com
                       </a>
                     </div>
                   </div>
@@ -48,8 +48,14 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-muted-foreground mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold">Call Us</h3>
-                      <a href="tel:+256772123456" className="text-primary hover:underline">
-                        +256 772 123 456
+                      <a href="tel:+256700690945" className="text-primary hover:underline block">
+                        +256 700 690 945
+                      </a>
+                      <a href="tel:+256781903525" className="text-primary hover:underline block">
+                        +256 781 903 525
+                      </a>
+                      <a href="tel:+256765947877" className="text-primary hover:underline block">
+                        +256 765 947 877
                       </a>
                     </div>
                   </div>
