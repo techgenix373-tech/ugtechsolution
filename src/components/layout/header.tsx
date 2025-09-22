@@ -28,8 +28,8 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Logo className="h-8 w-8 text-primary" />
-            <span className="font-bold font-headline">UGTech Solutions</span>
+            <Logo className="h-8 w-8" />
+            <span className="font-bold font-headline">Nexus Solutions</span>
           </Link>
         </div>
         <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
@@ -55,7 +55,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <SheetHeader className="sr-only">
+              <SheetHeader>
                 <SheetTitle>Main Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col space-y-4">
@@ -64,8 +64,8 @@ export function Header() {
                   className="mr-6 flex items-center space-x-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Logo className="h-8 w-8 text-primary" />
-                  <span className="font-bold">UGTech Solutions</span>
+                  <Logo className="h-8 w-8" />
+                  <span className="font-bold">Nexus Solutions</span>
                 </Link>
                 <div className="flex flex-col space-y-3">
                   {navLinks.map((link) => (
