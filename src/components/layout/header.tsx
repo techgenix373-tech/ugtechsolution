@@ -25,13 +25,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <div className="flex-1">
+        <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-8 w-8" />
             <span className="font-bold">UG Tech Solution</span>
           </Link>
         </div>
-        <nav className="hidden items-center justify-center space-x-6 text-sm font-medium md:flex flex-1">
+        <nav className="hidden md:flex flex-1 items-center justify-center space-x-6 text-sm font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -45,7 +45,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:flex flex-1 items-center justify-end">
+        <div className="hidden md:flex items-center justify-end">
             <Button asChild>
                 <Link href="/contact">Contact</Link>
             </Button>
