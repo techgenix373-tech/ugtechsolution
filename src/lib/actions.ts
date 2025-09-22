@@ -8,6 +8,8 @@ const FormSchema = z.object({
   keywords: z.string().optional(),
   contentLength: z.enum(['short', 'standard', 'long']),
   toneOfVoice: z.enum(['professional', 'casual', 'technical', 'inspirational']),
+  numberOfSuggestions: z.coerce.number().min(1).max(10),
+  contentFormat: z.enum(['blog', 'listicle', 'how-to', 'comparison']),
 });
 
 export type FormState = {
@@ -25,6 +27,8 @@ export async function generateIdeasAction(
     keywords: formData.get('keywords'),
     contentLength: formData.get('contentLength'),
     toneOfVoice: formData.get('toneOfVoice'),
+    numberOfSuggestions: formData.get('numberOfSuggestions'),
+    contentFormat: formData.get('contentFormat'),
   });
 
   if (!validatedFields.success) {

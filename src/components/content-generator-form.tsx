@@ -98,6 +98,35 @@ export function ContentGeneratorForm() {
             </Select>
           </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+                <Label htmlFor="numberOfSuggestions">Number of Suggestions</Label>
+                <Input
+                  id="numberOfSuggestions"
+                  name="numberOfSuggestions"
+                  type="number"
+                  defaultValue="3"
+                  min="1"
+                  max="10"
+                  required
+                />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="contentFormat">Content Format</Label>
+              <Select name="contentFormat" required defaultValue="blog">
+                <SelectTrigger id="contentFormat" className="w-full">
+                  <SelectValue placeholder="Select format" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="blog">Blog Post</SelectItem>
+                  <SelectItem value="listicle">Listicle</SelectItem>
+                  <SelectItem value="how-to">How-To Guide</SelectItem>
+                  <SelectItem value="comparison">Comparison Post</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
           <div className="space-y-2">
             <Label htmlFor="keywords">Keywords (Optional)</Label>
             <Input
