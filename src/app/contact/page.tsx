@@ -91,7 +91,7 @@ export default function ContactPage() {
                     <Button type="submit" className="w-full">Send Message</Button>
                   </form>
                 </CardContent>
-              </card>
+              </Card>
             </div>
           </div>
         </div>
