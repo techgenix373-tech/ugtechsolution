@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "A bustling cityscape of Kampala, representing the heart of Ugandan business.",
-      "imageUrl": "https://picsum.photos/seed/kampala/1920/1080",
-      "imageHint": "Kampala cityscape"
+      "description": "A modern keyboard and smartphone in a dark setting, representing digital solutions.",
+      "imageUrl": "https://picsum.photos/seed/tech-keyboard/1920/1080",
+      "imageHint": "tech keyboard"
     },
     {
       "id": "team-member-1",
