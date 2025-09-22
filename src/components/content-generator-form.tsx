@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useFormStatus } from 'react';
 import { generateIdeasAction, FormState } from '@/lib/actions';
 import { useEffect, useRef } from 'react';
 
@@ -34,7 +34,7 @@ function SubmitButton() {
 }
 
 export function ContentGeneratorForm() {
-  const [state, formAction] = useFormState(generateIdeasAction, initialState);
+  const [state, formAction] = useActionState(generateIdeasAction, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
