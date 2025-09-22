@@ -57,7 +57,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
         <div className="relative z-10 flex h-full items-center justify-center text-center text-white p-4">
             <div>
-                <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">
                     Digital Solutions for East Africa's Future
                 </h1>
                 <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 drop-shadow">
@@ -79,7 +79,7 @@ export default function Home() {
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">What We Do</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">What We Do</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
               From local shops to high-growth startups, we provide the technology and expertise to help you succeed online.
             </p>
@@ -90,7 +90,7 @@ export default function Home() {
                 <div className="mx-auto bg-primary/20 text-primary rounded-full p-3 w-fit">
                   <Briefcase className="w-8 h-8" />
                 </div>
-                <CardTitle className="font-headline pt-4">E-commerce for SMEs</CardTitle>
+                <CardTitle className="pt-4">E-commerce for SMEs</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -103,7 +103,7 @@ export default function Home() {
                 <div className="mx-auto bg-primary/20 text-primary rounded-full p-3 w-fit">
                   <BarChart className="w-8 h-8" />
                 </div>
-                <CardTitle className="font-headline pt-4">SEO for Startups</CardTitle>
+                <CardTitle className="pt-4">SEO for Startups</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -116,7 +116,7 @@ export default function Home() {
                 <div className="mx-auto bg-primary/20 text-primary rounded-full p-3 w-fit">
                   <Lightbulb className="w-8 h-8" />
                 </div>
-                <CardTitle className="font-headline pt-4">Content Strategy</CardTitle>
+                <CardTitle className="pt-4">Content Strategy</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -132,7 +132,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">What Our Clients Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
               Real stories from businesses we've helped empower.
             </p>
@@ -177,7 +177,7 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">Meet the Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Meet the Team</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
               We are a passionate team of developers, designers, and strategists dedicated to helping your business thrive in the digital age.
             </p>

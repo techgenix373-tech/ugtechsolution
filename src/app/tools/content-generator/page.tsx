@@ -5,7 +5,7 @@ export default function ContentGeneratorPage() {
     <div className="animate-fade-in">
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">
+          <h1 className="text-4xl md:text-5xl font-bold">
             AI Content Idea Generator
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">

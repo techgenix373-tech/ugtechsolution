@@ -30,7 +30,7 @@ export default function ContactPage() {
     <div className="animate-fade-in">
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">Get In Touch</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Get In Touch</h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             We're here to help. Whether you have a question about our services or want to start a project, we'd love to hear from you.
           </p>
@@ -93,20 +93,20 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Name</Label>
-                        <Input id="name" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} />
+                        <Input id="name" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} required/>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <Input id="email" type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="subject">Subject</Label>
-                      <Input id="subject" placeholder="What can we help you with?" value={subject} onChange={(e) => setSubject(e.target.value)} />
+                      <Input id="subject" placeholder="What can we help you with?" value={subject} onChange={(e) => setSubject(e.target.value)} required/>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message">Message</Label>
-                      <Textarea id="message" placeholder="Your message..." className="min-h-[120px]" value={message} onChange={(e) => setMessage(e.target.value)} />
+                      <Textarea id="message" placeholder="Your message..." className="min-h-[120px]" value={message} onChange={(e) => setMessage(e.target.value)} required/>
                     </div>
                     <Button type="submit" className="w-full">Send Message</Button>
                   </form>

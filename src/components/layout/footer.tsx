@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center space-x-2 mb-4 justify-center md:justify-start">
               <Logo className="h-8 w-8 text-primary" />
-              <span className="font-bold text-lg font-headline">UG Tech Solution</span>
+              <span className="font-bold text-lg">UG Tech Solution</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Digital Solutions for East Africa's Future.

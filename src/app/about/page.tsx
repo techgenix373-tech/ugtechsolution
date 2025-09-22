@@ -28,7 +28,7 @@ export default function AboutPage() {
     <div className="animate-fade-in">
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">
+          <h1 className="text-4xl md:text-5xl font-bold">
             We're a Team of Passionate Builders
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -39,8 +39,7 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="flex flex-col gap-8">
+          <div className="max-w-2xl mx-auto flex flex-col gap-8">
               {teamMembers.map((member) => (
                 <Card key={member.name} className="text-center shadow-lg w-full">
                   <CardHeader>
@@ -55,7 +54,7 @@ export default function AboutPage() {
                         />
                       </div>
                     )}
-                    <CardTitle className="font-headline pt-4">{member.name}</CardTitle>
+                    <CardTitle className="pt-4">{member.name}</CardTitle>
                     <CardDescription className="text-primary">{member.role}</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -64,14 +63,13 @@ export default function AboutPage() {
                 </Card>
               ))}
             </div>
-          </div>
         </div>
       </section>
 
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold font-headline">Our Values</h2>
+            <h2 className="text-3xl font-bold">Our Values</h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-4">
                 <h3 className="text-xl font-semibold">Local First</h3>

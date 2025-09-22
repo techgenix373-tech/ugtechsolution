@@ -84,7 +84,7 @@ export default function SmeSolutionsPage() {
             />
         )}
         <div className="container mx-auto px-4 text-center relative">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline">
+          <h1 className="text-4xl md:text-5xl font-bold">
             E-commerce Solutions for East African Businesses
           </h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -97,14 +97,14 @@ export default function SmeSolutionsPage() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline">Built for Your Success</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Built for Your Success</h2>
             <p className="mt-2 text-muted-foreground max-w-prose mx-auto">Key features designed for businesses in East Africa.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {features.map((feature, index) => (
               <Card key={index} className="p-6 flex flex-col items-center">
                 <div className="bg-primary/20 rounded-full p-3 mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold font-headline">{feature.title}</h3>
+                <h3 className="text-xl font-semibold">{feature.title}</h3>
                 <p className="mt-2 text-muted-foreground flex-grow">{feature.description}</p>
               </Card>
             ))}
@@ -116,7 +116,7 @@ export default function SmeSolutionsPage() {
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline">Transparent Pricing</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Transparent Pricing</h2>
             <p className="mt-2 text-muted-foreground max-w-xl mx-auto">
               Choose the plan that's right for you. No hidden fees. One-time setup costs.
             </p>
@@ -128,7 +128,7 @@ export default function SmeSolutionsPage() {
                   {tier.popular && (
                     <div className="text-sm font-semibold text-primary mb-2">MOST POPULAR</div>
                   )}
-                  <CardTitle className="text-2xl font-headline">{tier.name}</CardTitle>
+                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
                   <CardDescription>{tier.description}</CardDescription>
                   <div className="pt-4">
                     <span className="text-4xl font-bold break-words">{tier.price}</span>

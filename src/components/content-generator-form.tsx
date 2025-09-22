@@ -3,7 +3,7 @@
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { generateIdeasAction, FormState } from '@/lib/actions';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -12,7 +12,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Loader2, Lightbulb, AlertCircle, CheckCircle, Copy, Pencil, Save } from 'lucide-react';
+import { Loader2, Lightbulb, AlertCircle, CheckCircle, Copy, Pencil, Save, List, FileText, CaseSensitive, HelpCircle, Inbox, Mail, Send, Newspaper } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Textarea } from './ui/textarea';
 import { useToast } from '@/hooks/use-toast';
@@ -86,6 +86,32 @@ export function ContentGeneratorForm() {
       // In a real app, you might want to update the 'state.ideas' array
       // This is left as an exercise.
       setEditingIdea(null);
+    }
+  };
+  
+  const getIconForPoint = (point: string, format: string) => {
+    const iconClass = "h-4 w-4 mr-3 mt-1 text-green-500 flex-shrink-0";
+    switch (format) {
+      case 'blog':
+        return <FileText className={iconClass} />;
+      case 'listicle':
+        return <List className={iconClass} />;
+      case 'how-to':
+        return <HelpCircle className={iconClass} />;
+      case 'case-study':
+        return <CaseSensitive className={iconClass} />;
+      case 'faq':
+        return <HelpCircle className={iconClass} />;
+      case 'promotional-email':
+        return <Mail className={iconClass} />;
+      case 'transactional-email':
+        return <Send className={iconClass} />;
+      case 'welcome-email':
+        return <Inbox className={iconClass} />;
+      case 'newsletter':
+          return <Newspaper className={iconClass} />;
+      default:
+        return <CheckCircle className={iconClass} />;
     }
   };
 
@@ -220,7 +246,7 @@ export function ContentGeneratorForm() {
                       <ul className="space-y-3 pl-4 pt-2">
                         {idea.outline.map((point, pointIndex) => (
                           <li key={pointIndex} className="flex items-start">
-                            <CheckCircle className="h-4 w-4 mr-3 mt-1 text-green-500 flex-shrink-0" />
+                            {getIconForPoint(point, contentFormat)}
                             <span className="text-muted-foreground">{point}</span>
                           </li>
                         ))}
