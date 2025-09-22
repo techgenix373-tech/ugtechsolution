@@ -97,7 +97,7 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">Meet the Experts</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">Meet the Team</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
               We are a passionate team of developers, designers, and strategists dedicated to helping your business thrive in the digital age.
             </p>
