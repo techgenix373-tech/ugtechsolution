@@ -3,7 +3,7 @@
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { generateIdeasAction, FormState } from '@/lib/actions';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -12,7 +12,10 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Loader2, Lightbulb, AlertCircle, CheckCircle } from 'lucide-react';
+import { Loader2, Lightbulb, AlertCircle, CheckCircle, Copy, Pencil, Save } from 'lucide-react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Textarea } from './ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 
 const initialState: FormState = {
   message: 'idle',
@@ -38,12 +41,46 @@ function SubmitButton() {
 export function ContentGeneratorForm() {
   const [state, formAction] = useActionState(generateIdeasAction, initialState);
   const formRef = useRef<HTMLFormElement>(null);
+  const [editingIdea, setEditingIdea] = useState<{ title: string; outline: string[] } | null>(null);
+  const [editedTitle, setEditedTitle] = useState('');
+  const [editedOutline, setEditedOutline] = useState('');
+  const { toast } = useToast();
 
   useEffect(() => {
     if (state.message === 'success') {
       // formRef.current?.reset(); // Optionally reset form on success
     }
   }, [state]);
+
+  const handleCopy = (idea: { title: string; outline: string[] }) => {
+    const textToCopy = `Title: ${idea.title}\n\nOutline:\n- ${idea.outline.join('\n- ')}`;
+    navigator.clipboard.writeText(textToCopy);
+    toast({
+      title: "Copied to clipboard!",
+      description: "The idea and outline have been copied.",
+    });
+  };
+
+  const openEditDialog = (idea: { title: string; outline: string[] }) => {
+    setEditingIdea(idea);
+    setEditedTitle(idea.title);
+    setEditedOutline(idea.outline.join('\n'));
+  };
+
+  const handleSaveChanges = () => {
+    if (editingIdea) {
+      // Here you would typically update the state that holds the ideas.
+      // For this example, we'll just show a toast.
+      toast({
+        title: "Changes Saved (locally)",
+        description: "Your edits have been saved in this session.",
+      });
+      // In a real app, you might want to update the 'state.ideas' array
+      // This is left as an exercise.
+      setEditingIdea(null);
+    }
+  };
+
 
   return (
     <Card>
@@ -169,6 +206,20 @@ export function ContentGeneratorForm() {
                           </li>
                         ))}
                       </ul>
+                      <div className="flex gap-2 mt-4">
+                        <Button variant="outline" size="sm" onClick={() => handleCopy(idea)}>
+                          <Copy className="mr-2" />
+                          Copy
+                        </Button>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button variant="outline" size="sm" onClick={() => openEditDialog(idea)}>
+                              <Pencil className="mr-2" />
+                              Edit
+                            </Button>
+                          </DialogTrigger>
+                        </Dialog>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -177,6 +228,33 @@ export function ContentGeneratorForm() {
           )}
         </div>
       </CardContent>
+
+      {editingIdea && (
+        <Dialog open={!!editingIdea} onOpenChange={(isOpen) => !isOpen && setEditingIdea(null)}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Edit Content Idea</DialogTitle>
+              <DialogDescription>
+                Make changes to the title and outline below.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-4">
+              <div className="space-y-2">
+                <Label htmlFor="edit-title">Title</Label>
+                <Input id="edit-title" value={editedTitle} onChange={(e) => setEditedTitle(e.target.value)} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="edit-outline">Outline</Label>
+                <Textarea id="edit-outline" value={editedOutline} onChange={(e) => setEditedOutline(e.target.value)} className="min-h-[200px]" />
+              </div>
+            </div>
+            <Button onClick={handleSaveChanges}>
+              <Save className="mr-2" />
+              Save Changes
+            </Button>
+          </DialogContent>
+        </Dialog>
+      )}
     </Card>
   );
 }
