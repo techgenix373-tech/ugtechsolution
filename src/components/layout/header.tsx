@@ -13,7 +13,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/solutions/sme", label: "SME Solutions" },
   { href: "/services/startups", label: "Startup Services" },
-  { href: "/case-studies", label: "Case Studies" },
   { href: "/about", label: "About" },
   { href: "/tools/content-generator", label: "Content Tool" },
   { href: "/contact", label: "Contact" },

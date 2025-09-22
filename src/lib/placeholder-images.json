@@ -7,30 +7,6 @@
       "imageHint": "abstract technology"
     },
     {
-      "id": "case-study-sme",
-      "description": "A busy market scene in Kampala, Uganda",
-      "imageUrl": "https://picsum.photos/seed/101/600/400",
-      "imageHint": "african market"
-    },
-    {
-      "id": "case-study-startup",
-      "description": "A modern office with people collaborating around a computer screen showing graphs",
-      "imageUrl": "https://picsum.photos/seed/102/600/400",
-      "imageHint": "startup office"
-    },
-    {
-      "id": "case-study-logistics",
-      "description": "A delivery truck on a road in East Africa",
-      "imageUrl": "https://picsum.photos/seed/110/600/400",
-      "imageHint": "delivery truck"
-    },
-    {
-      "id": "case-study-tourism",
-      "description": "A beautiful safari landscape in Uganda",
-      "imageUrl": "https://picsum.photos/seed/111/600/400",
-      "imageHint": "safari landscape"
-    },
-    {
       "id": "team-member-1",
       "description": "Professional headshot of the CEO",
       "imageUrl": "https://picsum.photos/seed/201/200/200",

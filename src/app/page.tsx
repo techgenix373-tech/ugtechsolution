@@ -5,8 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { ArrowRight, BarChart, Briefcase, Code, Lightbulb, PenTool } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-const smeCaseStudyImage = PlaceHolderImages.find(img => img.id === 'case-study-sme');
-const startupCaseStudyImage = PlaceHolderImages.find(img => img.id === 'case-study-startup');
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
 
 export default function Home() {
@@ -91,59 +89,6 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Teaser */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Proven Results</h2>
-            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-              We deliver measurable impact. See how we've helped businesses like yours grow.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {smeCaseStudyImage && (
-               <Card className="overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                  <div className="relative h-64 md:h-auto">
-                    <Image src={smeCaseStudyImage.imageUrl} alt={smeCaseStudyImage.description} fill className="object-cover" data-ai-hint={smeCaseStudyImage.imageHint}/>
-                  </div>
-                  <div className="p-6 flex flex-col justify-center">
-                    <CardDescription>SME E-commerce</CardDescription>
-                    <CardTitle className="font-headline mt-1">Jumia Local Competitor</CardTitle>
-                    <p className="text-muted-foreground mt-2 mb-4">Enabled a Kampala-based retailer to launch online, resulting in a 300% increase in sales within 6 months.</p>
-                    <Button asChild variant="link" className="p-0 justify-start h-auto">
-                      <Link href="/case-studies">Read Case Study <ArrowRight className="ml-2 w-4 h-4" /></Link>
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            )}
-            {startupCaseStudyImage && (
-              <Card className="overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                   <div className="relative h-64 md:h-auto">
-                    <Image src={startupCaseStudyImage.imageUrl} alt={startupCaseStudyImage.description} fill className="object-cover" data-ai-hint={startupCaseStudyImage.imageHint} />
-                  </div>
-                  <div className="p-6 flex flex-col justify-center">
-                    <CardDescription>Startup SEO</CardDescription>
-                    <CardTitle className="font-headline mt-1">Fintech App</CardTitle>
-                    <p className="text-muted-foreground mt-2 mb-4">Improved organic search traffic by 150% and achieved first-page rankings for 10+ target keywords.</p>
-                    <Button asChild variant="link" className="p-0 justify-start h-auto">
-                      <Link href="/case-studies">Read Case Study <ArrowRight className="ml-2 w-4 h-4" /></Link>
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            )}
-          </div>
-           <div className="text-center mt-12">
-            <Button asChild size="lg">
-              <Link href="/case-studies">Explore All Case Studies</Link>
-            </Button>
           </div>
         </div>
       </section>
