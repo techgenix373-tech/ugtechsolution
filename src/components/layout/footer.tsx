@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t bg-secondary">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 text-center md:text-left">
-          <div className="col-span-1 md:col-span-1">
+          <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center space-x-2 mb-4 justify-center md:justify-start">
               <Logo className="h-8 w-8 text-primary" />
               <span className="font-bold text-lg font-headline">UG Tech Solution</span>

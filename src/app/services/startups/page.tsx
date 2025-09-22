@@ -6,17 +6,17 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const services = [
   {
-    icon: <Activity className="h-8 w-8 text-muted-foreground" />,
+    icon: <Activity className="h-8 w-8 text-primary" />,
     title: 'Performance Audits',
     description: 'We identify technical bottlenecks that slow down your site and harm user experience, providing a clear roadmap for improvement.',
   },
   {
-    icon: <FileSearch className="h-8 w-8 text-muted-foreground" />,
+    icon: <FileSearch className="h-8 w-8 text-primary" />,
     title: 'On-Page SEO',
     description: 'Comprehensive optimization of your content, meta tags, and site structure to improve search engine rankings.',
   },
   {
-    icon: <ShieldCheck className="h-8 w-8 text-muted-foreground" />,
+    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
     title: 'Security Monitoring',
     description: 'Proactive monitoring and regular updates to protect your website from threats and ensure it stays online.',
   },
@@ -98,14 +98,14 @@ export default function StartupsServicesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Your Technical Co-Pilot</h2>
-            <p className="mt-2 text-muted-foreground">Core services to ensure your startup's website is a growth engine.</p>
+            <p className="mt-2 text-muted-foreground max-w-prose mx-auto">Core services to ensure your startup's website is a growth engine.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {services.map((service, index) => (
-              <Card key={index} className="p-6">
-                <div className="flex justify-center mb-4">{service.icon}</div>
+              <Card key={index} className="p-6 flex flex-col items-center">
+                 <div className="bg-primary/20 rounded-full p-3 mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold font-headline">{service.title}</h3>
-                <p className="mt-2 text-muted-foreground">{service.description}</p>
+                <p className="mt-2 text-muted-foreground flex-grow">{service.description}</p>
               </Card>
             ))}
           </div>
@@ -121,9 +121,9 @@ export default function StartupsServicesPage() {
               Predictable pricing for ongoing technical excellence.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {pricingTiers.map((tier) => (
-              <Card key={tier.name} className={tier.popular ? 'border-primary' : ''}>
+              <Card key={tier.name} className={`flex flex-col ${tier.popular ? 'border-primary' : ''}`}>
                 <CardHeader className="text-center">
                   {tier.popular && (
                     <div className="text-sm font-semibold text-primary mb-2">MOST POPULAR</div>
@@ -135,11 +135,11 @@ export default function StartupsServicesPage() {
                     <p className="text-sm text-muted-foreground">{tier.period}</p>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <ul className="space-y-3">
                     {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-center">
-                        <Check className="h-5 w-5 text-primary mr-2" />
+                      <li key={feature} className="flex items-start">
+                        <Check className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                         <span>{feature}</span>
                       </li>
                     ))}

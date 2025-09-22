@@ -8,7 +8,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 export default function ContactPage() {
   return (
     <div className="animate-fade-in">
-      <section className="py-20 md:py-24 bg-secondary">
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline">Get In Touch</h1>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -19,33 +19,33 @@ export default function ContactPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="lg:col-span-1">
               <Card>
                 <CardHeader>
                   <CardTitle>Contact Information</CardTitle>
                   <CardDescription>Reach out to us through any of the channels below.</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="h-6 w-6 text-muted-foreground mt-1" />
+                <CardContent className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="h-6 w-6 text-muted-foreground mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold">Our Office</h3>
                       <p className="text-muted-foreground">123 Kira Road, Kamwokya</p>
                       <p className="text-muted-foreground">Kampala, Uganda</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <Mail className="h-6 w-6 text-muted-foreground mt-1" />
+                  <div className="flex items-start space-x-4">
+                    <Mail className="h-6 w-6 text-muted-foreground mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold">Email Us</h3>
-                      <a href="mailto:hello@ugtech.solutions" className="text-primary hover:underline">
+                      <a href="mailto:hello@ugtech.solutions" className="text-primary hover:underline break-all">
                         hello@ugtech.solutions
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <Phone className="h-6 w-6 text-muted-foreground mt-1" />
+                  <div className="flex items-start space-x-4">
+                    <Phone className="h-6 w-6 text-muted-foreground mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold">Call Us</h3>
                       <a href="tel:+256772123456" className="text-primary hover:underline">

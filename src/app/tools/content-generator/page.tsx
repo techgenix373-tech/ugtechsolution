@@ -3,7 +3,7 @@ import { ContentGeneratorForm } from '@/components/content-generator-form';
 export default function ContentGeneratorPage() {
   return (
     <div className="animate-fade-in">
-      <section className="py-20 md:py-24 bg-secondary">
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline">
             AI Content Idea Generator

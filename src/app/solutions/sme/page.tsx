@@ -6,17 +6,17 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const features = [
   {
-    icon: <Smartphone className="h-8 w-8 text-muted-foreground" />,
+    icon: <Smartphone className="h-8 w-8 text-primary" />,
     title: 'Mobile Money Integration',
     description: 'Seamlessly accept payments from MTN Mobile Money, Airtel Money, and more, directly on your website.',
   },
   {
-    icon: <LayoutDashboard className="h-8 w-8 text-muted-foreground" />,
+    icon: <LayoutDashboard className="h-8 w-8 text-primary" />,
     title: 'Custom Dashboards',
     description: 'Track your sales, inventory, and customer data with an easy-to-use dashboard tailored to your business needs.',
   },
   {
-    icon: <Users className="h-8 w-8 text-muted-foreground" />,
+    icon: <Users className="h-8 w-8 text-primary" />,
     title: 'Local Customer Support',
     description: 'Get help when you need it from our Uganda-based support team that understands the local market.',
   },
@@ -98,14 +98,14 @@ export default function SmeSolutionsPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Built for Your Success</h2>
-            <p className="mt-2 text-muted-foreground">Key features designed for businesses in East Africa.</p>
+            <p className="mt-2 text-muted-foreground max-w-prose mx-auto">Key features designed for businesses in East Africa.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {features.map((feature, index) => (
-              <Card key={index} className="p-6">
-                <div className="flex justify-center mb-4">{feature.icon}</div>
+              <Card key={index} className="p-6 flex flex-col items-center">
+                <div className="bg-primary/20 rounded-full p-3 mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold font-headline">{feature.title}</h3>
-                <p className="mt-2 text-muted-foreground">{feature.description}</p>
+                <p className="mt-2 text-muted-foreground flex-grow">{feature.description}</p>
               </Card>
             ))}
           </div>
@@ -121,9 +121,9 @@ export default function SmeSolutionsPage() {
               Choose the plan that's right for you. No hidden fees. One-time setup costs.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {pricingTiers.map((tier) => (
-              <Card key={tier.name} className={tier.popular ? 'border-primary' : ''}>
+              <Card key={tier.name} className={`flex flex-col ${tier.popular ? 'border-primary' : ''}`}>
                 <CardHeader className="text-center">
                   {tier.popular && (
                     <div className="text-sm font-semibold text-primary mb-2">MOST POPULAR</div>
@@ -131,15 +131,15 @@ export default function SmeSolutionsPage() {
                   <CardTitle className="text-2xl font-headline">{tier.name}</CardTitle>
                   <CardDescription>{tier.description}</CardDescription>
                   <div className="pt-4">
-                    <span className="text-4xl font-bold">{tier.price}</span>
+                    <span className="text-4xl font-bold break-words">{tier.price}</span>
                     <p className="text-sm text-muted-foreground">{tier.period}</p>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <ul className="space-y-3">
                     {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-center">
-                        <Check className="h-5 w-5 text-primary mr-2" />
+                      <li key={feature} className="flex items-start">
+                        <Check className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
                         <span>{feature}</span>
                       </li>
                     ))}
