@@ -81,6 +81,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Hide the Next.js development indicator */
+  next-dev-indicator {
+    display: none;
+  }
 }
 
 @layer utilities {
