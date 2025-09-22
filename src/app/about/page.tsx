@@ -39,29 +39,31 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member) => (
-              <Card key={member.name} className="text-center shadow-lg">
-                <CardHeader>
-                  {member.image && (
-                    <div className="relative w-32 h-32 mx-auto">
-                      <Image
-                        src={member.image.imageUrl}
-                        alt={member.image.description}
-                        fill
-                        className="rounded-full object-cover border-4 border-primary/50"
-                        data-ai-hint={member.image.imageHint}
-                      />
-                    </div>
-                  )}
-                  <CardTitle className="font-headline pt-4">{member.name}</CardTitle>
-                  <CardDescription className="text-primary">{member.role}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-2xl mx-auto">
+            <div className="flex flex-col gap-8">
+              {teamMembers.map((member) => (
+                <Card key={member.name} className="text-center shadow-lg w-full">
+                  <CardHeader>
+                    {member.image && (
+                      <div className="relative w-32 h-32 mx-auto">
+                        <Image
+                          src={member.image.imageUrl}
+                          alt={member.image.description}
+                          fill
+                          className="rounded-full object-cover border-4 border-primary/50"
+                          data-ai-hint={member.image.imageHint}
+                        />
+                      </div>
+                    )}
+                    <CardTitle className="font-headline pt-4">{member.name}</CardTitle>
+                    <CardDescription className="text-primary">{member.role}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
