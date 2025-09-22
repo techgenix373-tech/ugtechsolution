@@ -55,15 +55,45 @@ export function ContentGeneratorForm() {
       </CardHeader>
       <CardContent>
         <form ref={formRef} action={formAction} className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="targetAudience">Target Audience</Label>
+              <Select name="targetAudience" required defaultValue="SME">
+                <SelectTrigger id="targetAudience" className="w-full">
+                  <SelectValue placeholder="Select an audience" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="SME">Small & Medium Enterprises (SMEs)</SelectItem>
+                  <SelectItem value="startup">Startups</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="contentLength">Content Length</Label>
+              <Select name="contentLength" required defaultValue="standard">
+                <SelectTrigger id="contentLength" className="w-full">
+                  <SelectValue placeholder="Select length" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="short">Short Form (~400 words)</SelectItem>
+                  <SelectItem value="standard">Standard (~1000 words)</SelectItem>
+                  <SelectItem value="long">Long Form (1500+ words)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+          
           <div className="space-y-2">
-            <Label htmlFor="targetAudience">Target Audience</Label>
-            <Select name="targetAudience" required defaultValue="SME">
-              <SelectTrigger id="targetAudience" className="w-full">
-                <SelectValue placeholder="Select an audience" />
+            <Label htmlFor="toneOfVoice">Tone of Voice</Label>
+            <Select name="toneOfVoice" required defaultValue="professional">
+              <SelectTrigger id="toneOfVoice" className="w-full">
+                <SelectValue placeholder="Select a tone" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="SME">Small & Medium Enterprises (SMEs)</SelectItem>
-                <SelectItem value="startup">Startups</SelectItem>
+                <SelectItem value="professional">Professional</SelectItem>
+                <SelectItem value="casual">Casual & Friendly</SelectItem>
+                <SelectItem value="technical">Technical & Data-Driven</SelectItem>
+                <SelectItem value="inspirational">Inspirational</SelectItem>
               </SelectContent>
             </Select>
           </div>

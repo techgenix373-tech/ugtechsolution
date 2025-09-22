@@ -6,6 +6,8 @@ import { generateBlogContentIdeas, GenerateBlogContentIdeasInput, GenerateBlogCo
 const FormSchema = z.object({
   targetAudience: z.enum(['SME', 'startup']),
   keywords: z.string().optional(),
+  contentLength: z.enum(['short', 'standard', 'long']),
+  toneOfVoice: z.enum(['professional', 'casual', 'technical', 'inspirational']),
 });
 
 export type FormState = {
@@ -21,9 +23,12 @@ export async function generateIdeasAction(
   const validatedFields = FormSchema.safeParse({
     targetAudience: formData.get('targetAudience'),
     keywords: formData.get('keywords'),
+    contentLength: formData.get('contentLength'),
+    toneOfVoice: formData.get('toneOfVoice'),
   });
 
   if (!validatedFields.success) {
+    console.log(validatedFields.error.flatten().fieldErrors);
     return {
       message: 'error',
       error: 'Invalid form data. Please check your inputs.',

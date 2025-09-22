@@ -21,8 +21,10 @@ const GenerateBlogContentIdeasInputSchema = z.object({
     .describe('The target audience for the blog content ideas.'),
   keywords: z
     .string()
-    .describe("Keywords to focus on for generating blog content ideas.  If left blank, focus on generating ideas based on current trends and SEO best practices.  If non-blank, use the keywords to narrow the idea generation.")
+    .describe("Keywords to focus on for generating blog content ideas. If left blank, focus on generating ideas based on current trends and SEO best practices. If non-blank, use the keywords to narrow the idea generation.")
     .optional(),
+  contentLength: z.enum(['short', 'standard', 'long']).describe('The desired length of the content.'),
+  toneOfVoice: z.enum(['professional', 'casual', 'technical', 'inspirational']).describe('The desired tone of voice for the content.'),
 });
 export type GenerateBlogContentIdeasInput = z.infer<
   typeof GenerateBlogContentIdeasInputSchema
@@ -52,9 +54,16 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   output: {schema: GenerateBlogContentIdeasOutputSchema},
   prompt: `You are a marketing expert specializing in content creation for {{targetAudience}}s.
 
-  Generate a list of blog content ideas based on current trends and SEO best practices. For each idea, provide a catchy title and a brief outline with 3-5 key sections or talking points.
+  Generate a list of blog content ideas based on current trends and SEO best practices. For each idea, provide a catchy title and a brief outline.
 
   The ideas should be engaging and relevant to the target audience.
+  
+  The tone of the content should be: {{toneOfVoice}}.
+  The desired content length is: {{contentLength}}.
+  - short: 300-500 words, with a 2-3 point outline.
+  - standard: 800-1200 words, with a 3-5 point outline.
+  - long: 1500+ words, with a 5-7 point detailed outline.
+
   Here are some keywords to guide your idea generation, if provided: {{{keywords}}}
 
   Here are some example ideas, depending on the target audience:
