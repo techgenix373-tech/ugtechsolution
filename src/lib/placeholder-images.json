@@ -9,19 +9,19 @@
     {
       "id": "team-member-1",
       "description": "Professional headshot of the CEO",
-      "imageUrl": "https://picsum.photos/seed/211/200/200",
+      "imageUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
       "imageHint": "professional woman"
     },
     {
       "id": "team-member-2",
       "description": "Professional headshot of the Lead Developer",
-      "imageUrl": "https://picsum.photos/seed/202/200/200",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
       "imageHint": "professional man"
     },
     {
       "id": "team-member-3",
       "description": "Professional headshot of the UI/UX Designer",
-      "imageUrl": "https://picsum.photos/seed/203/200/200",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
       "imageHint": "smiling person"
     },
     {
