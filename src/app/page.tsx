@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-gray-800 mb-16 sm:mb-0">
+      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-gray-800 mb-24">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="pt-8 pb-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-headline font-bold">What We Do</h2>
