@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-gray-800 mb-24">
+      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-gray-800 mb-20 md:mb-24">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
