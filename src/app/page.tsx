@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white mb-16 md:mb-32">
+      <section className="relative w-full h-[60vh] md:h-[70vh] mb-16 md:mb-32">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
@@ -55,21 +55,23 @@ export default function Home() {
           />
         )}
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 p-4">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
-            Digital Solutions for East Africa's Future
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 drop-shadow">
-            We build powerful e-commerce platforms for local businesses and provide expert SEO services for startups.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Link href="/solutions/sme">Solutions for Local Businesses</Link>
-            </Button>
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/services/startups">Services for Startups</Link>
-            </Button>
-          </div>
+        <div className="relative z-10 flex h-full items-center justify-center text-center text-white p-4">
+            <div>
+                <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
+                    Digital Solutions for East Africa's Future
+                </h1>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 drop-shadow">
+                    We build powerful e-commerce platforms for local businesses and provide expert SEO services for startups.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Link href="/solutions/sme">Solutions for Local Businesses</Link>
+                    </Button>
+                    <Button asChild size="lg" variant="secondary">
+                        <Link href="/services/startups">Services for Startups</Link>
+                    </Button>
+                </div>
+            </div>
         </div>
       </section>
 
