@@ -26,7 +26,7 @@ const GenerateBlogContentIdeasInputSchema = z.object({
   contentLength: z.enum(['short', 'standard', 'long']).describe('The desired length of the content.'),
   toneOfVoice: z.enum(['professional', 'casual', 'technical', 'inspirational']).describe('The desired tone of voice for the content.'),
   numberOfSuggestions: z.coerce.number().min(1).max(10).describe('The number of blog content ideas to generate.'),
-  contentFormat: z.enum(['blog', 'listicle', 'how-to', 'comparison']).describe('The desired format of the content.'),
+  contentFormat: z.enum(['blog', 'listicle', 'how-to', 'comparison', 'case-study', 'review', 'faq', 'press-release']).describe('The desired format of the content.'),
 });
 export type GenerateBlogContentIdeasInput = z.infer<
   typeof GenerateBlogContentIdeasInputSchema
@@ -56,7 +56,7 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   output: {schema: GenerateBlogContentIdeasOutputSchema},
   prompt: `You are a marketing expert specializing in content creation for {{targetAudience}}s.
 
-  Generate a list of {{numberOfSuggestions}} blog content ideas based on current trends and SEO best practices. For each idea, provide a catchy title and a brief outline.
+  Generate a list of {{numberOfSuggestions}} content ideas based on current trends and SEO best practices. For each idea, provide a catchy title and a brief outline appropriate for the selected format.
 
   The ideas should be engaging and relevant to the target audience.
   
@@ -71,6 +71,10 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   - listicle: A list-based article (e.g., "5 Ways to..."). Title and outline should reflect this.
   - how-to: A step-by-step guide. Title and outline should be structured as steps.
   - comparison: A post comparing two or more things. Title and outline should clearly show the comparison.
+  - case-study: Structure the outline with sections like "The Challenge," "Our Solution," and "The Results."
+  - review: An outline for a product or service review including "Key Features," "Pros & Cons," and a "Final Verdict."
+  - faq: Generate a list of relevant questions on the topic and structure them as a Q&A.
+  - press-release: A standard press release format including headline, dateline, introduction, body, and boilerplate.
 
   Here are some keywords to guide your idea generation, if provided: {{{keywords}}}
 
@@ -106,3 +110,4 @@ const generateBlogContentIdeasFlow = ai.defineFlow(
     return output!;
   }
 );
+

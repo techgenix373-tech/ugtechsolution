@@ -9,7 +9,7 @@ const FormSchema = z.object({
   contentLength: z.enum(['short', 'standard', 'long']),
   toneOfVoice: z.enum(['professional', 'casual', 'technical', 'inspirational']),
   numberOfSuggestions: z.coerce.number().min(1).max(10),
-  contentFormat: z.enum(['blog', 'listicle', 'how-to', 'comparison']),
+  contentFormat: z.enum(['blog', 'listicle', 'how-to', 'comparison', 'case-study', 'review', 'faq', 'press-release']),
 });
 
 export type FormState = {

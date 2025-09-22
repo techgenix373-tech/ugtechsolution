@@ -168,6 +168,10 @@ export function ContentGeneratorForm() {
                   <SelectItem value="listicle">List-based Article</SelectItem>
                   <SelectItem value="how-to">How-To Guide</SelectItem>
                   <SelectItem value="comparison">Comparison Post</SelectItem>
+                  <SelectItem value="case-study">Case Study</SelectItem>
+                  <SelectItem value="review">Review</SelectItem>
+                  <SelectItem value="faq">FAQ Article</SelectItem>
+                  <SelectItem value="press-release">Press Release</SelectItem>
                 </SelectContent>
               </Select>
             </div>
