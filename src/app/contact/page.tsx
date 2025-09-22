@@ -31,7 +31,7 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-muted-foreground mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold">Our Office</h3>
-                      <p className="text-muted-foreground">123 Kira Road, Kamwokya</p>
+                      <p className="text-muted-foreground">Nakawa, Old Portbell Road</p>
                       <p className="text-muted-foreground">Kampala, Uganda</p>
                     </div>
                   </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                     <Button type="submit" className="w-full">Send Message</Button>
                   </form>
                 </CardContent>
-              </Card>
+              </card>
             </div>
           </div>
         </div>
