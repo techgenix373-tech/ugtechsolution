@@ -43,17 +43,18 @@ export default function Home() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-gray-800 mb-16 md:mb-32">
+      <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white mb-16 md:mb-32">
         {heroImage && (
           <Image
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
             priority
             data-ai-hint={heroImage.imageHint}
           />
         )}
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 p-4">
           <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
             Digital Solutions for East Africa's Future
