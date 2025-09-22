@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <div className="flex items-center">
+        <div className="flex-1 md:flex-none">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-8 w-8" />
             <span className="font-bold">UG Tech Solution</span>
@@ -45,8 +45,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:flex items-center justify-end">
-            <Button asChild>
+        <div className="hidden md:flex items-center justify-end flex-1 md:flex-none">
+            <Button asChild size="sm">
                 <Link href="/contact">Contact</Link>
             </Button>
         </div>
@@ -85,7 +85,7 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
-                  <Button asChild size="lg" className="mt-4">
+                  <Button asChild className="mt-4">
                     <Link href="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>
                   </Button>
                 </div>
