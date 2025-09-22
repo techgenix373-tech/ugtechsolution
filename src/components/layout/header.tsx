@@ -16,7 +16,6 @@ const navLinks = [
   { href: "/services/startups", label: "Startup Services" },
   { href: "/about", label: "About" },
   { href: "/tools/content-generator", label: "Content Tool" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -26,7 +25,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <div className="mr-4 flex">
+        <div className="mr-auto flex">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-8 w-8" />
             <span className="font-bold">UG Tech Solution</span>
@@ -46,6 +45,11 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <div className="hidden md:flex flex-1 items-center justify-end">
+            <Button asChild>
+                <Link href="/contact">Contact</Link>
+            </Button>
+        </div>
         <div className="flex flex-1 items-center justify-end md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -81,6 +85,9 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
+                  <Button asChild size="lg" className="mt-4">
+                    <Link href="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>
+                  </Button>
                 </div>
               </div>
             </SheetContent>
