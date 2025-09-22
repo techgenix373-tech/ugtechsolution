@@ -165,7 +165,7 @@ export function ContentGeneratorForm() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="blog">Blog Post</SelectItem>
-                  <SelectItem value="listicle">Listicle</SelectItem>
+                  <SelectItem value="listicle">List-based Article</SelectItem>
                   <SelectItem value="how-to">How-To Guide</SelectItem>
                   <SelectItem value="comparison">Comparison Post</SelectItem>
                 </SelectContent>
