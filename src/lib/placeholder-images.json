@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "Abstract network of nodes representing technology and connection",
-      "imageUrl": "https://picsum.photos/seed/100/1920/1080",
-      "imageHint": "abstract technology"
+      "description": "A modern workspace with a keyboard and smartphone, representing digital solutions.",
+      "imageUrl": "https://picsum.photos/seed/101/1920/1080",
+      "imageHint": "keyboard smartphone"
     },
     {
       "id": "team-member-1",
