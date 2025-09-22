@@ -1,4 +1,3 @@
-import { Twitter, Linkedin, Github } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 
@@ -44,17 +43,6 @@ export function Footer() {
             <p className="text-sm text-muted-foreground text-center md:text-left">
                 &copy; {new Date().getFullYear()} UG Tech Solution. All rights reserved.
             </p>
-            <div className="flex items-center space-x-4">
-                <Link href="#" aria-label="Twitter">
-                    <Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
-                </Link>
-                <Link href="#" aria-label="LinkedIn">
-                    <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
-                </Link>
-                <Link href="#" aria-label="GitHub">
-                    <Github className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
-                </Link>
-            </div>
         </div>
       </div>
     </footer>
