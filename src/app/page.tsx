@@ -54,7 +54,7 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
         <div className="relative z-10 flex h-full items-center justify-center text-center text-white p-4">
             <div>
                 <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-md">
