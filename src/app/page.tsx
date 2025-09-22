@@ -29,13 +29,6 @@ const testimonials = [
     rating: 4,
     avatar: PlaceHolderImages.find(img => img.id === 'testimonial-3'),
   },
-  {
-    name: 'Mark Ochieng',
-    company: 'Marketing Head, InnovateKE',
-    text: 'The AI content tool has saved us countless hours. We now have a steady stream of relevant blog ideas that our audience loves.',
-    rating: 5,
-    avatar: PlaceHolderImages.find(img => img.id === 'testimonial-4'),
-  },
 ];
 
 
@@ -137,7 +130,7 @@ export default function Home() {
               Real stories from businesses we've helped empower.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
               <Card key={testimonial.name} className="flex flex-col">
                 <CardContent className="pt-6 flex-grow">
