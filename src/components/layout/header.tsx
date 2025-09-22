@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Dot } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -54,6 +54,9 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col space-y-4">
                 <Link
                   href="/"
