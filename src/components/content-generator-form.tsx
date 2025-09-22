@@ -46,6 +46,14 @@ export function ContentGeneratorForm() {
   const [editedOutline, setEditedOutline] = useState('');
   const { toast } = useToast();
 
+  // State for controlled components
+  const [targetAudience, setTargetAudience] = useState('SME');
+  const [contentLength, setContentLength] = useState('standard');
+  const [toneOfVoice, setToneOfVoice] = useState('professional');
+  const [numberOfSuggestions, setNumberOfSuggestions] = useState('3');
+  const [contentFormat, setContentFormat] = useState('blog');
+  const [keywords, setKeywords] = useState('');
+
   useEffect(() => {
     if (state.message === 'success') {
       // formRef.current?.reset(); // Optionally reset form on success
@@ -95,7 +103,7 @@ export function ContentGeneratorForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="targetAudience">Target Audience</Label>
-              <Select name="targetAudience" required defaultValue="SME">
+              <Select name="targetAudience" required value={targetAudience} onValueChange={setTargetAudience}>
                 <SelectTrigger id="targetAudience" className="w-full">
                   <SelectValue placeholder="Select an audience" />
                 </SelectTrigger>
@@ -107,7 +115,7 @@ export function ContentGeneratorForm() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="contentLength">Content Length</Label>
-              <Select name="contentLength" required defaultValue="standard">
+              <Select name="contentLength" required value={contentLength} onValueChange={setContentLength}>
                 <SelectTrigger id="contentLength" className="w-full">
                   <SelectValue placeholder="Select length" />
                 </SelectTrigger>
@@ -122,7 +130,7 @@ export function ContentGeneratorForm() {
           
           <div className="space-y-2">
             <Label htmlFor="toneOfVoice">Tone of Voice</Label>
-            <Select name="toneOfVoice" required defaultValue="professional">
+            <Select name="toneOfVoice" required value={toneOfVoice} onValueChange={setToneOfVoice}>
               <SelectTrigger id="toneOfVoice" className="w-full">
                 <SelectValue placeholder="Select a tone" />
               </SelectTrigger>
@@ -142,7 +150,8 @@ export function ContentGeneratorForm() {
                   id="numberOfSuggestions"
                   name="numberOfSuggestions"
                   type="number"
-                  defaultValue="3"
+                  value={numberOfSuggestions}
+                  onChange={(e) => setNumberOfSuggestions(e.target.value)}
                   min="1"
                   max="10"
                   required
@@ -150,7 +159,7 @@ export function ContentGeneratorForm() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="contentFormat">Content Format</Label>
-              <Select name="contentFormat" required defaultValue="blog">
+              <Select name="contentFormat" required value={contentFormat} onValueChange={setContentFormat}>
                 <SelectTrigger id="contentFormat" className="w-full">
                   <SelectValue placeholder="Select format" />
                 </SelectTrigger>
@@ -170,6 +179,8 @@ export function ContentGeneratorForm() {
               id="keywords"
               name="keywords"
               placeholder="e.g., e-commerce, mobile payments, SEO"
+              value={keywords}
+              onChange={(e) => setKeywords(e.target.value)}
             />
           </div>
 
