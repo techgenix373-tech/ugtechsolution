@@ -4,28 +4,22 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const teamMembers = [
   {
-    name: 'Amina Okoro',
-    role: 'CEO & Founder',
+    name: 'Nazziwa Sharifah',
+    role: 'CEO & Founder, Content Strategist',
     image: PlaceHolderImages.find(img => img.id === 'team-member-1'),
-    bio: 'With a decade of experience in tech across Africa, Amina founded UGTech to empower local businesses with world-class digital tools.',
+    bio: 'With a decade of experience in tech across Africa, Nazziwa founded UGTech to empower local businesses with world-class digital tools and content strategies.',
   },
   {
-    name: 'David Kasumba',
+    name: 'Birungi Louis',
     role: 'Lead Developer',
     image: PlaceHolderImages.find(img => img.id === 'team-member-2'),
-    bio: 'A full-stack expert, David leads our technical team, turning complex challenges into elegant, scalable solutions.',
+    bio: 'A full-stack expert, Birungi leads our technical team, turning complex challenges into elegant, scalable solutions.',
   },
   {
-    name: 'Grace Nakato',
+    name: 'Andrew Bisaso',
     role: 'UI/UX Designer',
     image: PlaceHolderImages.find(img => img.id === 'team-member-3'),
-    bio: 'Grace is passionate about creating intuitive and beautiful user experiences that drive engagement and delight users.',
-  },
-  {
-    name: 'Ben Sserwanga',
-    role: 'SEO & Content Strategist',
-    image: PlaceHolderImages.find(img => img.id === 'team-member-4'),
-    bio: 'Ben combines data-driven insights with creative content strategies to help our clients dominate search and connect with their audience.',
+    bio: 'Andrew is passionate about creating intuitive and beautiful user experiences that drive engagement and delight users.',
   },
 ];
 
@@ -45,7 +39,7 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member) => (
               <Card key={member.name} className="text-center shadow-lg">
                 <CardHeader>
