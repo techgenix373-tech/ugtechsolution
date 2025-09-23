@@ -9,55 +9,49 @@
     {
       "id": "team-member-1",
       "description": "Professional headshot of the CEO",
-      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "imageHint": "professional woman"
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1573603867003-89f5fd7a7576?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YnVzaW5lc3MlMjBwZXJzb258ZW58MHx8fHwxNzU4NTk0NzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business person"
     },
     {
       "id": "team-member-2",
       "description": "Professional headshot of the Lead Developer",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "imageHint": "professional man"
+      "imageUrl": "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTg1ODY0NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional woman"
     },
     {
       "id": "team-member-3",
       "description": "Professional headshot of the UI/UX Designer",
-      "imageUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c21pbGluZyUyMHBlcnNvbnxlbnwwfHx8fDE3NTg1ODMyNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "smiling person"
     },
     {
       "id": "testimonial-1",
       "description": "Headshot of a satisfied client",
-      "imageUrl": "https://picsum.photos/seed/401/100/100",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1573603867003-89f5fd7a7576?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YnVzaW5lc3MlMjBwZXJzb258ZW58MHx8fHwxNzU4NTk0NzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business person"
     },
     {
       "id": "testimonial-2",
       "description": "Headshot of a satisfied client",
-      "imageUrl": "https://picsum.photos/seed/402/100/100",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1559855603-ce4c8f480d76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzbWlsaW5nJTIwd29tYW58ZW58MHx8fHwxNzU4NTUwODk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "smiling woman"
     },
     {
       "id": "testimonial-3",
       "description": "Headshot of a satisfied client",
-      "imageUrl": "https://picsum.photos/seed/403/100/100",
+      "imageUrl": "https://images.unsplash.com/photo-1724328486793-3ffbe395a1b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwd2VhcmluZyUyMHN1aXR8ZW58MHx8fHwxNzU4NjMxMjkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man wearing suit"
-    },
-    {
-      "id": "testimonial-4",
-      "description": "Headshot of a satisfied client",
-      "imageUrl": "https://picsum.photos/seed/404/100/100",
-      "imageHint": "woman smiling"
     },
     {
       "id": "sme-solution-bg",
       "description": "A person using a smartphone to make a mobile payment",
-      "imageUrl": "https://picsum.photos/seed/301/1200/400",
+      "imageUrl": "https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb2JpbGUlMjBwYXltZW50fGVufDB8fHx8MTc1ODU5MDIzMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "mobile payment"
     },
     {
       "id": "startup-service-bg",
       "description": "A complex line graph showing positive growth",
-      "imageUrl": "https://picsum.photos/seed/302/1200/400",
+      "imageUrl": "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzfGVufDB8fHx8MTc1ODU5MjE1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data analytics"
     }
   ]
