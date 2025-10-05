@@ -45,7 +45,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:flex items-center justify-end flex-none">
+        <div className="hidden md:flex items-center justify-end flex-1 md:flex-none">
             <Button asChild size="sm">
                 <Link href="/contact">Contact</Link>
             </Button>
