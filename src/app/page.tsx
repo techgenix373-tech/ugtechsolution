@@ -34,7 +34,7 @@ const testimonials = [
 
 export default function Home() {
   return (
-    <div className="animate-fade-in">
+    <div>
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] md:h-[70vh] mb-16 md:mb-32">
         {heroImage && (

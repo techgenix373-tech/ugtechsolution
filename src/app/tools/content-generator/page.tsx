@@ -2,7 +2,7 @@ import { ContentGeneratorForm } from '@/components/content-generator-form';
 
 export default function ContentGeneratorPage() {
   return (
-    <div className="animate-fade-in">
+    <div>
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold">

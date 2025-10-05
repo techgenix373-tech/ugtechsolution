@@ -4,20 +4,20 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const teamMembers = [
   {
-    name: 'Nazziwa Sharifah',
+    name: 'Birungi Louis',
     role: 'CEO & Founder, Content Strategist',
     image: PlaceHolderImages.find(img => img.id === 'team-member-1'),
-    bio: 'With a decade of experience in tech across Africa, Nazziwa founded UGTech to empower local businesses with world-class digital tools and content strategies.',
+    bio: 'With a decade of experience in tech across Africa, Birungi founded UGTech to empower local businesses with world-class digital tools and content strategies.',
   },
   {
-    name: 'Birungi Louis',
-    role: 'Lead Developer',
+    name: 'Nazziwa Sharifah',
+    role: 'Co Founder, Lead Developer',
     image: PlaceHolderImages.find(img => img.id === 'team-member-2'),
-    bio: 'A full-stack expert, Birungi leads our technical team, turning complex challenges into elegant, scalable solutions.',
+    bio: 'A full-stack expert with outstanding experience in web development, Nazziwa leads our technical team, turning complex challenges into elegant, scalable solutions.',
   },
   {
     name: 'Andrew Bisaso',
-    role: 'UI/UX Designer',
+    role: 'Managing Director, UI/UX Designer',
     image: PlaceHolderImages.find(img => img.id === 'team-member-3'),
     bio: 'Andrew is passionate about creating intuitive and beautiful user experiences that drive engagement and delight users.',
   },
@@ -25,7 +25,7 @@ const teamMembers = [
 
 export default function AboutPage() {
   return (
-    <div className="animate-fade-in">
+    <div>
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold">

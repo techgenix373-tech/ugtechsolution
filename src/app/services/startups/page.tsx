@@ -71,7 +71,7 @@ const heroImage = PlaceHolderImages.find(img => img.id === 'startup-service-bg')
 
 export default function StartupsServicesPage() {
   return (
-    <div className="animate-fade-in">
+    <div>
       {/* Hero */}
       <section className="relative py-20 md:py-32 bg-secondary">
         {heroImage && (
