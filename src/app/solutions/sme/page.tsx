@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -73,21 +74,22 @@ export default function SmeSolutionsPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-20 md:py-32 bg-secondary">
+      <section className="relative py-20 md:py-32 text-white">
         {heroImage && (
             <Image 
                 src={heroImage.imageUrl} 
                 alt={heroImage.description}
                 data-ai-hint={heroImage.imageHint}
                 fill
-                className="object-cover opacity-10"
+                className="object-cover"
             />
         )}
+        <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-4 text-center relative">
           <h1 className="text-4xl md:text-5xl font-bold">
             E-commerce Solutions for East African Businesses
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
             Go digital with a powerful online store built for the local market. Accept mobile money, manage your inventory, and grow your sales.
           </p>
         </div>
