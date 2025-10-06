@@ -23,15 +23,28 @@ const teamMembers = [
   },
 ];
 
+const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-page-hero');
+
 export default function AboutPage() {
   return (
     <div>
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-16 md:py-24 text-white">
+        {aboutHeroImage && (
+          <Image
+            src={aboutHeroImage.imageUrl}
+            alt={aboutHeroImage.description}
+            fill
+            className="object-cover"
+            data-ai-hint={aboutHeroImage.imageHint}
+            priority
+          />
+        )}
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold">
             We're a Team of Passionate Builders
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto">
             Our mission is to bridge the technology gap for East African businesses, providing the tools and expertise needed to thrive in the digital economy.
           </p>
         </div>
