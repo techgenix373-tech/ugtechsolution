@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import {
   motion,
@@ -9,14 +9,22 @@ import { Button } from '@/components/ui/button';
 
 
 export function AnimatedHero() {
-  const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+      });
+    }
+  }, []);
 
   return (
     <section
-      ref={ref}
       className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden"
     >
       <video
+          ref={videoRef}
           autoPlay
           loop
           muted
