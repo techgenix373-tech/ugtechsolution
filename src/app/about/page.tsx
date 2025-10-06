@@ -30,7 +30,7 @@ const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-page-hero
 export default function AboutPage() {
   return (
     <div>
-      <section className="relative h-[50vh] flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
         {aboutHeroImage && (
           <Image
             src={aboutHeroImage.imageUrl}
