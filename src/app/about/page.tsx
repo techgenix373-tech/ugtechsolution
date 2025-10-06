@@ -39,12 +39,12 @@ export default function AboutPage() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold">
             We're a Team of Passionate Builders
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
             Our mission is to bridge the technology gap for East African businesses, providing the tools and expertise needed to thrive in the digital economy.
           </p>
         </div>
