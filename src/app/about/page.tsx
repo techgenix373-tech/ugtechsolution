@@ -30,21 +30,19 @@ const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-page-hero
 export default function AboutPage() {
   return (
     <div>
-      <section className="relative py-16 md:py-24 text-white overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center text-center text-white overflow-hidden">
         {aboutHeroImage && (
-          <div className="absolute inset-0">
-            <Image
-              src={aboutHeroImage.imageUrl}
-              alt={aboutHeroImage.description}
-              fill
-              className="object-cover"
-              data-ai-hint={aboutHeroImage.imageHint}
-              priority
-            />
-          </div>
+          <Image
+            src={aboutHeroImage.imageUrl}
+            alt={aboutHeroImage.description}
+            fill
+            className="object-cover"
+            data-ai-hint={aboutHeroImage.imageHint}
+            priority
+          />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-        <div className="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center h-full">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 p-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-md">
             We're a Team of Passionate Builders
           </h1>
