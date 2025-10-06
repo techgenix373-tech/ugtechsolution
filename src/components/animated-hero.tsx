@@ -1,44 +1,31 @@
 "use client";
 
-import React, from 'react';
-import Image from 'next/image';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import {
   motion,
-  useScroll,
-  useTransform,
 } from 'framer-motion';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-
-const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
 
 
 export function AnimatedHero() {
-  const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const ref = useRef(null);
 
   return (
-    <motion.section
+    <section
       ref={ref}
-      style={{ scale, opacity }}
-      className="relative w-full h-[70vh] md:h-[80vh] mb-16 md:mb-32"
+      className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden"
     >
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
+      <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto object-cover transform -translate-x-1/2 -translate-y-1/2 -z-10"
+      >
+          <source src="https://videos.pexels.com/video-files/853875/853875-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+      </video>
       <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
       
       <div className="absolute inset-0 z-10 flex items-center justify-center text-center text-white p-4">
@@ -75,6 +62,6 @@ export function AnimatedHero() {
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
