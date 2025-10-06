@@ -1,5 +1,8 @@
+
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ArrowRight, BarChart, Briefcase, Lightbulb, Star } from 'lucide-react';
@@ -36,16 +39,23 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
+      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white overflow-hidden">
         {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
+           <motion.div
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.05 }}
+            transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroImage.imageUrl}
+              alt={heroImage.description}
+              fill
+              className="object-cover"
+              data-ai-hint={heroImage.imageHint}
+              priority
+            />
+          </motion.div>
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 p-4">

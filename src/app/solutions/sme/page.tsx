@@ -1,5 +1,7 @@
 
+'use client';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, Smartphone, LayoutDashboard, Users } from 'lucide-react';
@@ -74,15 +76,22 @@ export default function SmeSolutionsPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-20 md:py-32 text-white">
+      <section className="relative py-20 md:py-32 text-white overflow-hidden">
         {heroImage && (
-            <Image 
-                src={heroImage.imageUrl} 
-                alt={heroImage.description}
-                data-ai-hint={heroImage.imageHint}
-                fill
-                className="object-cover"
-            />
+            <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.05 }}
+              transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
+              className="absolute inset-0"
+            >
+              <Image 
+                  src={heroImage.imageUrl} 
+                  alt={heroImage.description}
+                  data-ai-hint={heroImage.imageHint}
+                  fill
+                  className="object-cover"
+              />
+            </motion.div>
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-4 text-center relative">

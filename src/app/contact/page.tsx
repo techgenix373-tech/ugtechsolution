@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -33,15 +34,22 @@ export default function ContactPage() {
 
   return (
     <div>
-      <section className="relative py-16 md:py-24 text-white">
+      <section className="relative py-16 md:py-24 text-white overflow-hidden">
         {contactHeroImage && (
-            <Image 
-                src={contactHeroImage.imageUrl} 
-                alt={contactHeroImage.description}
-                data-ai-hint={contactHeroImage.imageHint}
-                fill
-                className="object-cover"
-            />
+             <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.05 }}
+              transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
+              className="absolute inset-0"
+            >
+              <Image 
+                  src={contactHeroImage.imageUrl} 
+                  alt={contactHeroImage.description}
+                  data-ai-hint={contactHeroImage.imageHint}
+                  fill
+                  className="object-cover"
+              />
+            </motion.div>
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-4 text-center relative">

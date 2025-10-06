@@ -1,6 +1,7 @@
 
 'use client';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -32,14 +33,21 @@ export default function AboutPage() {
     <div>
       <section className="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
         {aboutHeroImage && (
-          <Image
-            src={aboutHeroImage.imageUrl}
-            alt={aboutHeroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={aboutHeroImage.imageHint}
-            priority
-          />
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.05 }}
+            transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, repeatType: "mirror" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={aboutHeroImage.imageUrl}
+              alt={aboutHeroImage.description}
+              fill
+              className="object-cover"
+              data-ai-hint={aboutHeroImage.imageHint}
+              priority
+            />
+          </motion.div>
         )}
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 p-4">
