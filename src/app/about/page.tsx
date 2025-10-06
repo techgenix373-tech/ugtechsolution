@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
@@ -33,12 +32,7 @@ export default function AboutPage() {
     <div>
       <section className="relative py-16 md:py-24 text-white overflow-hidden">
         {aboutHeroImage && (
-          <motion.div
-            initial={{ scale: 1.15, opacity: 0.8 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
-            className="absolute inset-0"
-          >
+          <div className="absolute inset-0">
             <Image
               src={aboutHeroImage.imageUrl}
               alt={aboutHeroImage.description}
@@ -47,24 +41,16 @@ export default function AboutPage() {
               data-ai-hint={aboutHeroImage.imageHint}
               priority
             />
-          </motion.div>
+          </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         <div className="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center h-full">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl font-bold text-white drop-shadow-md">
+          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-md">
             We're a Team of Passionate Builders
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
             Our mission is to bridge the technology gap for East African businesses, providing the tools and expertise needed to thrive in the digital economy.
-          </motion.p>
+          </p>
         </div>
       </section>
 
