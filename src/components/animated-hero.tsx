@@ -1,19 +1,18 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
   motion,
   useScroll,
   useTransform,
-  useSpring,
   useMotionValue,
   useMotionTemplate,
 } from 'framer-motion';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Briefcase, Code, PenTool, Lightbulb } from 'lucide-react';
+import { Code, PenTool, Briefcase, Database } from 'lucide-react';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
 
@@ -52,7 +51,7 @@ const FloatingIcon = ({
 );
 
 export function AnimatedHero() {
-  const ref = useRef(null);
+  const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -108,7 +107,7 @@ export function AnimatedHero() {
             <FloatingIcon icon={Code} className="top-[15%] left-[10%]" delay={0.1} x={-100} y={-50} />
             <FloatingIcon icon={PenTool} className="top-[20%] right-[15%]" delay={0.3} x={100} y={-50}/>
             <FloatingIcon icon={Briefcase} className="bottom-[25%] left-[20%]" delay={0.5} x={-100} y={50}/>
-            <FloatingIcon icon={Lightbulb} className="bottom-[20%] right-[25%]" delay={0.7} x={100} y={50}/>
+            <FloatingIcon icon={Database} className="bottom-[20%] right-[25%]" delay={0.7} x={100} y={50}/>
         </motion.div>
       </div>
 
