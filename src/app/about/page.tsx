@@ -1,6 +1,9 @@
+
+'use client';
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
@@ -23,30 +26,45 @@ const teamMembers = [
   },
 ];
 
-const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-page-hero');
+const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-page-hero-2');
 
 export default function AboutPage() {
   return (
     <div>
-      <section className="relative py-16 md:py-24 text-white">
+      <section className="relative py-16 md:py-24 text-white overflow-hidden">
         {aboutHeroImage && (
-          <Image
-            src={aboutHeroImage.imageUrl}
-            alt={aboutHeroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={aboutHeroImage.imageHint}
-            priority
-          />
+          <motion.div
+            initial={{ scale: 1.15, opacity: 0.8 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={aboutHeroImage.imageUrl}
+              alt={aboutHeroImage.description}
+              fill
+              className="object-cover"
+              data-ai-hint={aboutHeroImage.imageHint}
+              priority
+            />
+          </motion.div>
         )}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center h-full">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold text-white drop-shadow-md">
             We're a Team of Passionate Builders
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
             Our mission is to bridge the technology gap for East African businesses, providing the tools and expertise needed to thrive in the digital economy.
-          </p>
+          </motion.p>
         </div>
       </section>
 
