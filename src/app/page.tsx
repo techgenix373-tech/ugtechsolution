@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ArrowRight, BarChart, Briefcase, Lightbulb, Star } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { AnimatedHero } from '@/components/animated-hero';
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
 
@@ -37,7 +36,36 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <AnimatedHero />
+      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
+        {heroImage && (
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-cover"
+            data-ai-hint={heroImage.imageHint}
+            priority
+          />
+        )}
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 p-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">
+            Digital Solutions for East Africa's Future
+          </h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 drop-shadow">
+            We build powerful e-commerce platforms for local businesses and
+            provide expert SEO services for startups.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg">
+              <Link href="/solutions/sme">Solutions for Local Businesses</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/services/startups">Services for Startups</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Services Overview */}
       <section className="py-8 md:py-12 bg-background">
