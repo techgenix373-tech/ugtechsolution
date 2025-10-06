@@ -25,7 +25,7 @@ const teamMembers = [
   },
 ];
 
-const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-page-hero-2');
+const aboutHeroImage = PlaceHolderImages.find(img => img.id === 'about-page-hero');
 
 export default function AboutPage() {
   return (
@@ -105,5 +105,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-    
