@@ -10,30 +10,39 @@ import {
   useMotionValue,
   useMotionTemplate,
 } from 'framer-motion';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { PlaceHolderImages, ImagePlaceholder } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Code, PenTool, Briefcase, Database } from 'lucide-react';
 
 const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
+const robotImages = [
+    PlaceHolderImages.find((img) => img.id === 'robot-1'),
+    PlaceHolderImages.find((img) => img.id === 'robot-2'),
+    PlaceHolderImages.find((img) => img.id === 'robot-3'),
+    PlaceHolderImages.find((img) => img.id === 'robot-4'),
+].filter(Boolean) as ImagePlaceholder[];
 
-const FloatingIcon = ({
-  icon: Icon,
+const FloatingImage = ({
+  image,
   className,
   delay,
   x,
   y,
+  width,
+  height,
 }: {
-  icon: React.ElementType;
+  image: ImagePlaceholder;
   className: string;
   delay: number;
   x: number;
   y: number;
+  width: number;
+  height: number;
 }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.5, x, y }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.8, delay, ease: 'easeOut' }}
-    className={`absolute text-white/50 ${className}`}
+    className={`absolute ${className}`}
   >
     <motion.div
       animate={{
@@ -45,7 +54,14 @@ const FloatingIcon = ({
         ease: 'easeInOut',
       }}
     >
-      <Icon className="w-12 h-12 md:w-16 md:h-16" />
+      <Image 
+        src={image.imageUrl}
+        alt={image.description}
+        width={width}
+        height={height}
+        className="object-contain drop-shadow-2xl"
+        data-ai-hint={image.imageHint}
+      />
     </motion.div>
   </motion.div>
 );
@@ -104,10 +120,10 @@ export function AnimatedHero() {
                 `,
             }}
         >
-            <FloatingIcon icon={Code} className="top-[15%] left-[10%]" delay={0.1} x={-100} y={-50} />
-            <FloatingIcon icon={PenTool} className="top-[20%] right-[15%]" delay={0.3} x={100} y={-50}/>
-            <FloatingIcon icon={Briefcase} className="bottom-[25%] left-[20%]" delay={0.5} x={-100} y={50}/>
-            <FloatingIcon icon={Database} className="bottom-[20%] right-[25%]" delay={0.7} x={100} y={50}/>
+            {robotImages[0] && <FloatingImage image={robotImages[0]} className="top-[15%] left-[10%]" delay={0.1} x={-100} y={-50} width={120} height={120} />}
+            {robotImages[1] && <FloatingImage image={robotImages[1]} className="top-[20%] right-[15%]" delay={0.3} x={100} y={-50} width={100} height={100} />}
+            {robotImages[2] && <FloatingImage image={robotImages[2]} className="bottom-[25%] left-[20%]" delay={0.5} x={-100} y={50} width={110} height={110} />}
+            {robotImages[3] && <FloatingImage image={robotImages[3]} className="bottom-[20%] right-[25%]" delay={0.7} x={100} y={50} width={130} height={130} />}
         </motion.div>
       </div>
 

@@ -7,9 +7,33 @@
       "imageHint": "tech keyboard"
     },
     {
+      "id": "robot-1",
+      "description": "A modern, sleek white robot looking forward.",
+      "imageUrl": "https://images.unsplash.com/photo-1589254065909-b7086229d092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb2JvdHxlbnwwfHx8fDE3NTg5MzYxODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern robot"
+    },
+    {
+      "id": "robot-2",
+      "description": "A close-up of a robot's hand and glowing blue circuits.",
+      "imageUrl": "https://images.unsplash.com/photo-1554194029-5f25a7e78d9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyb2JvdHxlbnwwfHx8fDE3NTg5MzYxODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robot circuits"
+    },
+    {
+      "id": "robot-3",
+      "description": "A small, friendly robot holding a block.",
+      "imageUrl": "https://images.unsplash.com/photo-1534723452862-4c874018d66d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyb2JvdHxlbnwwfHx8fDE3NTg5MzYxODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "friendly robot"
+    },
+    {
+      "id": "robot-4",
+      "description": "A futuristic humanoid robot against a dark background.",
+      "imageUrl": "https://images.unsplash.com/photo-1620712943543-95fc69afd524?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cm9ib3R8ZW58MHx8fHwxNzU4OTM2MTg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "futuristic robot"
+    },
+    {
       "id": "team-member-1",
       "description": "Professional headshot of the CEO",
-      "imageUrl": "https://images.unsplash.com/flagged/photo-1573603867003-89f5fd7a7576?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YnVzaW5lc3MlMjBwZXJzb258ZW58MHx8fHwxNzU4NTk0NzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1556157382-97eda2d62296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBlcnNvbnxlbnwwfHx8fDE3NTg1OTQ3NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business person"
     },
     {
