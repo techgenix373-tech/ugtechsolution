@@ -1,12 +1,17 @@
+
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+const contactHeroImage = PlaceHolderImages.find(img => img.id === 'contact-page-hero');
 
 export default function ContactPage() {
   const [name, setName] = useState('');
@@ -28,10 +33,20 @@ export default function ContactPage() {
 
   return (
     <div>
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold">Get In Touch</h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+      <section className="relative py-16 md:py-24 text-white">
+        {contactHeroImage && (
+            <Image 
+                src={contactHeroImage.imageUrl} 
+                alt={contactHeroImage.description}
+                data-ai-hint={contactHeroImage.imageHint}
+                fill
+                className="object-cover"
+            />
+        )}
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="container mx-auto px-4 text-center relative">
+          <h1 className="text-4xl md:text-5xl font-bold drop-shadow-md">Get In Touch</h1>
+          <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
             We're here to help. Whether you have a question about our services or want to start a project, we'd love to hear from you.
           </p>
         </div>
