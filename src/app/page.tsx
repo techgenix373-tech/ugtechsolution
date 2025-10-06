@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, BarChart, Briefcase, Code, Lightbulb, PenTool, Star } from 'lucide-react';
+import { ArrowRight, BarChart, Briefcase, Lightbulb, Star } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { AnimatedHero } from '@/components/animated-hero';
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
 
@@ -36,37 +37,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] mb-16 md:mb-32">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
-        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
-        <div className="relative z-10 flex h-full items-center justify-center text-center text-white p-4">
-            <div>
-                <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">
-                    Digital Solutions for East Africa's Future
-                </h1>
-                <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 drop-shadow">
-                    We build powerful e-commerce platforms for local businesses and provide expert SEO services for startups.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                        <Link href="/solutions/sme">Solutions for Local Businesses</Link>
-                    </Button>
-                    <Button asChild size="lg" variant="secondary">
-                        <Link href="/services/startups">Services for Startups</Link>
-                    </Button>
-                </div>
-            </div>
-        </div>
-      </section>
+      <AnimatedHero />
 
       {/* Services Overview */}
       <section className="py-8 md:py-12 bg-background">
