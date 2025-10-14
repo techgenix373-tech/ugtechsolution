@@ -11,7 +11,7 @@ import { PageTransition } from '@/components/page-transition';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'UGTechsolutions',
+  title: 'UGTechsolution',
   description: 'E-commerce and SEO solutions for East African businesses.',
 };
 
