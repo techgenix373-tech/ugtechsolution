@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 
@@ -9,7 +10,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center space-x-2 mb-4 justify-center md:justify-start">
               <Logo className="h-8 w-8 text-primary" />
-              <span className="font-bold text-lg">UG Tech Solution</span>
+              <span className="font-bold text-lg">UGTechsolutions</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Digital Solutions for East Africa's Future.
@@ -41,7 +42,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-                &copy; {new Date().getFullYear()} UG Tech Solution. All rights reserved.
+                &copy; {new Date().getFullYear()} UGTechsolutions. All rights reserved.
             </p>
         </div>
       </div>

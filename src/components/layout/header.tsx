@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -28,7 +29,7 @@ export function Header() {
         <div className="flex-1 md:flex-none">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-8 w-8" />
-            <span className="font-bold">UG Tech Solution</span>
+            <span className="font-bold">UGTechsolutions</span>
           </Link>
         </div>
         <nav className="hidden md:flex flex-1 items-center justify-center space-x-6 text-sm font-medium">
@@ -69,7 +70,7 @@ export function Header() {
                   onClick={() => setIsOpen(false)}
                 >
                   <Logo className="h-8 w-8" />
-                  <span className="font-bold">UG Tech Solution</span>
+                  <span className="font-bold">UGTechsolutions</span>
                 </Link>
                 <div className="flex flex-col space-y-3">
                   {navLinks.map((link) => (
