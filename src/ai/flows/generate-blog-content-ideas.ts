@@ -109,6 +109,8 @@ const generateBlogContentIdeasPrompt = ai.definePrompt({
   - "Click here to claim your offer: [Link]"
   - "Best,"
   - "The UGTech Team"
+
+  Please ensure your output is a valid JSON object that adheres to the provided output schema.
   `,
 });
 
