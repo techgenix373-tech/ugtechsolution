@@ -4,12 +4,18 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import birungiLouisImage from 'public/images/birungi-louis.jpg';
 
 const teamMembers = [
   {
     name: 'Birungi Louis',
     role: 'CEO & Founder, Content Strategist',
-    image: PlaceHolderImages.find(img => img.id === 'team-member-1'),
+    image: {
+      id: 'team-member-1',
+      description: 'Professional headshot of the CEO',
+      imageUrl: birungiLouisImage,
+      imageHint: 'professional man'
+    },
     bio: 'With a decade of experience in tech across Africa, Birungi founded UGTech to empower local businesses with world-class digital tools and content strategies.',
   },
   {
